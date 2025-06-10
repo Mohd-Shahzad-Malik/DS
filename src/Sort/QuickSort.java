@@ -3,16 +3,14 @@ package Sort;
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {20, 35, -15, 7, 55, 1, -22};
-        quickSort(arr, 0, arr.length );
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        quickSort(arr, 0, arr.length);
+
+        System.out.println("Sorted array:" + java.util.Arrays.toString(arr));
     }
 
     private static void quickSort(int[] arr, int start, int end) {
-        if (end -start < 2) {
-            return;
-        }
+        if(end - start < 2) return;
+
         int pivotIndex = partition(arr, start, end);
         quickSort(arr, start, pivotIndex);
         quickSort(arr, pivotIndex + 1, end);
@@ -23,20 +21,19 @@ public class QuickSort {
         int i = start;
         int j = end;
 
-        while (i < j) {
-            while (i < j && arr[--j] >= pivot);
-
-            if (i < j) {
-                arr[i] = arr[j]; // Move the smaller element to the left
-            }
-
-            while (i < j && arr[++i] <= pivot);
-            if (i < j) {
-                arr[j] = arr[i]; // Move the larger element to the right
-            }
+        while (i < j){
+            while (i < j && pivot <= arr[--j]) ;
+        if (i < j) {
+            arr[i] = arr[j];
         }
 
-        arr[j] = pivot; // Place the pivot in its correct position
-        return j; // Return the index of the pivot
+        while (i < j && pivot >= arr[++i]) ;
+        if (i < j) {
+            arr[j] = arr[i];
+        }
+    }
+        arr[j] = pivot;
+        return j;
+
     }
 }
