@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class LongestSubStringWithoutRepeating {
     public static void main(String[] args) {
-        String  s = "tmmzuxt";
+        String  s = "cadbzabcdabcdrgh";
 //        int n = s.length();
 //        int[] index = new int[128]; // ASCII character set
 //        int maxLength = 0;
@@ -34,12 +34,16 @@ public class LongestSubStringWithoutRepeating {
 
          Map<Character, Integer> lastSeenIndex = new HashMap<>();
          int i = 0, j = 0, maxLength = 0;
+         String str = "";
           while(j < s.length()){
 
               if(lastSeenIndex.get(s.charAt(j)) == null || lastSeenIndex.get(s.charAt(j)) < i) {
                     // If the character has not been seen or is not in the current window
                   int length = j - i + 1;
-                    maxLength = Math.max(maxLength, length);
+                  if(length > maxLength) {
+                      maxLength = length;
+                      str = s.substring(i, j + 1); // Update the longest substring
+                  }
                     lastSeenIndex.put(s.charAt(j), j); // Store the last seen index of the character
                     j++;
               }  else  {
@@ -48,8 +52,7 @@ public class LongestSubStringWithoutRepeating {
                   i = indexOfFirstItr + 1; // Move the start pointer to the right of the last seen index
                   j++;
               }
-
           }
-        System.out.println("Length of the longest substring without repeating characters using sliding window: " + maxLength);
+        System.out.println("Length of the longest substring without repeating characters using sliding window: " + maxLength + " and the substring is: " + str);
     }
 }
