@@ -1,4 +1,4 @@
-package ArraysPkg;
+package TwoPoinerSliddingWindow;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 public class FruitBaskitBetter {
     public static void main(String[] args) throws InterruptedException {
 
-        int [] fruits = {3,3,3,1,2,1,1,2,3,3,4};
+        int [] fruits = {3,3,3,1,2,1,1,2,2,3,3,4};
         int k =2;
         int maxLength =0;
         int i=0, j=0;
@@ -18,7 +18,7 @@ public class FruitBaskitBetter {
             }else map.put(fruits[j], map.get(fruits[j]) +1);
 
             if(map.size() >k){
-                while(map.get(fruits[i]) != null && map.size() > 2){
+                while(map.get(fruits[i]) != null && map.size() > k){
                     map.put(fruits[i], map.get(fruits[i])-1);
                     if(map.get(fruits[i]) == 0){
                         map.remove(fruits[i]);

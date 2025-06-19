@@ -6,7 +6,7 @@ public class MajorityELement {
     public static void main(String[] args) {
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
-        int[] nums = {7, 7, 5,7,1,5,7,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7, 7 ,7, 7 ,7 ,7 ,7};
+        int[] nums = {7,  5,7,1,5,7,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7, 7 ,7, 7 ,7 ,7 ,7};
 //        for (int i = 0; i < nums.length; i++) {
 //            if(map.get(nums[i]) == null) {
 //                map.put(nums[i], 1);
