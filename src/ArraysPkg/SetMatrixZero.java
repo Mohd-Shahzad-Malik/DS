@@ -10,7 +10,6 @@ public class SetMatrixZero {
                 {1, 1, 0, 1},
                 {1, 1, 1, 1}
         };
-
         int row =3, col = 3;
 
         for (int i = 0; i <= row; i++) {
@@ -20,9 +19,7 @@ public class SetMatrixZero {
                     col(arr, j, row);
                 }
             }
-
         }
-
         System.out.println(Arrays.deepToString(arr));
     }
 

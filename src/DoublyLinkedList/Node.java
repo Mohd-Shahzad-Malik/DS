@@ -1,17 +1,13 @@
-package SingilyLinkedList;
+package DoublyLinkedList;
 
 public class Node {
 
     private Employee employee;
     private Node next;
-    private Integer num;
+    private  Node previous;
 
     public Node(Employee employee){
         this.employee = employee;
-    }
-
-    public Node(Integer num){
-        this.num = num;
     }
 
     public Employee getEmployee() {
@@ -30,16 +26,18 @@ public class Node {
         this.next = next;
     }
 
-    public Integer getNum() {
-        return num;
+    public Node getPrevious() {
+        return previous;
     }
 
-    public void setNum(Integer num) {
-        this.num = num;
+    public void setPrevious(Node previous) {
+        this.previous = previous;
     }
 
     @Override
     public String toString() {
-        return num + "" ;
+        return "Node{" +
+                "employee=" + employee +
+                '}';
     }
 }

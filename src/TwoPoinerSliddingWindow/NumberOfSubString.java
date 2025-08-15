@@ -12,7 +12,8 @@ public class NumberOfSubString {
             for (int j = i; j < str.length(); j++) {
                 arr[str.charAt(j) - 'a'] = 1;
                 if(arr[0] + arr[1] + arr[2] == 3){
-                    count++;
+                    count = count + str.length() - j;
+                    break;
                 }
             }
         }

@@ -47,6 +47,6 @@ public class NextPermutation {
             start++;
             end--;
         }
-
+        System.out.println(Arrays.toString(nums));
     }
 }

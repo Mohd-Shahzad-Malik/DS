@@ -11,15 +11,13 @@ public class MaximumOnces {
             if(arr[right] == 0) count++;
             if(count <= k){
              maxLength = Math.max(maxLength, right - left + 1);
-             right++;
             } else if(arr[left] == 0){
                 count--;
                 left++;
-                right++;
             } else {
                 left++;
-                right++;
             }
+            right++;
         }
         System.out.println(maxLength);
 

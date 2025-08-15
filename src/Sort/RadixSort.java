@@ -1,5 +1,7 @@
 package Sort;
 
+import java.util.Arrays;
+
 public class RadixSort {
     public static void main(String[] args) {
         int[] arr = {4725, 4586, 1330, 8792, 1594, 5729};
@@ -30,6 +32,7 @@ public class RadixSort {
         }
 
         int[] output = new int[numItems];
+        System.out.println("count array " + Arrays.toString(countArray));
         for (int i = numItems - 1; i >= 0; i--) {
             int value = arr[i];
             int digit = (value / (int) Math.pow(radix, position)) % radix;
@@ -37,6 +40,7 @@ public class RadixSort {
             countArray[digit]--;
         }
 
+        System.out.println("output array " + Arrays.toString(output));
         for (int i = 0; i < numItems; i++) {
             arr[i] = output[i];
         }

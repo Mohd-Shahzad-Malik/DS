@@ -29,8 +29,8 @@ public class FruitBaskitBetter {
 
             if(map.size() <= k){
                 maxLength = Math.max(maxLength, j-i+1);
-                j++;
             }
+            j++;
         }
 
         System.out.println(maxLength);

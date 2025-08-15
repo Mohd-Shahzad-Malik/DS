@@ -9,10 +9,19 @@ public class Application {
 
         LinkedListC list = new LinkedListC();
 
-        list.addEmployee(emp);
-        list.addEmployee(emp1);
-        list.addEmployee(emp2);
-        list.printEmployee();
+//        list.addEmployee(emp);
+//        list.addEmployee(emp1);
+//        list.addEmployee(emp2);
+//        list.printEmployee();
+
+        LinkedListC l = new LinkedListC();
+        l.sortedList(4);
+        l.sortedList(7);
+        l.sortedList(2);
+        l.sortedList(5);
+        System.out.println(l.size());
+        l.printEmployee();;
+
 
     }
 }

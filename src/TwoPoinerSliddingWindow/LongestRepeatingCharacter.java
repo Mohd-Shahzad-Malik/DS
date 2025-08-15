@@ -21,10 +21,8 @@ public class LongestRepeatingCharacter {
 //                if(change <=k){
 //                    maxL = Math.max(maxL, (j-i+1));
 //                } else break;
-//
 //            }
 //        }
-//        System.out.println(maxL);
 
         Map<Character, Integer> map = new LinkedHashMap<>();
         int l =0, r = 0;
@@ -35,7 +33,7 @@ public class LongestRepeatingCharacter {
             } else {
                 map.put(s.charAt(r), map.get(s.charAt(r)) +1);
             }
-            maxFreq = Math.max(maxFreq, map.get(s.charAt(r)));
+            maxFreq = Math.max( maxFreq , map.get(s.charAt(r)));
 
             int change = (r- l +1) - maxFreq;
 
@@ -47,7 +45,6 @@ public class LongestRepeatingCharacter {
                 l++;
             }
             r++;
-
         }
 
         System.out.println(maxL);

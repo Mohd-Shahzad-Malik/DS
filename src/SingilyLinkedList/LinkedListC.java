@@ -12,6 +12,13 @@ public class LinkedListC {
         size++;
     }
 
+    public void addEmployee(Integer emp){
+        Node node = new Node(emp);
+        node.setNext(head);
+        head = node;
+        size++;
+    }
+
     public Employee removeEmployee(){
         if(head == null){
             System.out.println("no record found");
@@ -21,6 +28,25 @@ public class LinkedListC {
         head = head.getNext();
         size--;
         return remove;
+    }
+
+    public void sortedList(Integer num){
+        if(head == null || head.getNum() >= num){
+            addEmployee(num);
+            return;
+        }
+        //find insertion point
+        Node curr = head.getNext();
+        Node previous = head;
+        while(curr != null && curr.getNum() < num){
+            previous = curr;
+            curr = curr.getNext();
+        }
+
+        Node node = new Node(num);
+        node.setNext(curr);
+        previous.setNext(node);
+        size++;
     }
 
     public int size(){
